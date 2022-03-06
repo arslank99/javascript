@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+    
+    	<input type="date" id="date" name="date">
+    	<input type="submit" onclick="age()" value="submit">
+    	<h1 name="year" id="year"></h1><h1>age in Year</h1>
+    	<h1 name="" id="months"></h1><h1>age in Months</h1>
+    	<h1 name="" id="days"></h1><h1>age in Days</h1>
+    	<h1 name="" id="hours"></h1><h1>age in Hours</h1>
+    	<h1 name="" id="minutes"></h1><h1>age in Minutes</h1>
+    	<h1 name="" id="seconds"></h1><h1>age in Seconds</h1>
+
+           
+
+
+	<script>
+		function age() {
+			var dob = document.getElementById('date').value;
+			var DateNow = Date.now();
+			var DateInMili = Date.parse(dob);
+			var output = DateNow - DateInMili;
+            
+            var Milliseconds = output;
+            var seconds = 1000;
+            var minutes = seconds*60;
+            var hours = minutes*60;
+            var days = hours*24;
+            var month = days*30;
+            var year = month*12;
+            console.log(minutes,hours,days,month,year);
+
+
+            let ageinYear    = Math.round(Milliseconds/year);
+            let ageinMonths  = Math.round(Milliseconds/month);
+            let ageinDays    = Math.round(Milliseconds/days);
+            let ageinHours   = Math.round(Milliseconds/hours);
+            let ageinMinutes = Math.round(Milliseconds/minutes);
+            let ageinSeconds = Math.round(Milliseconds/seconds);
+            
+
+             document.getElementById('year').innerHTML = ageinYear;
+             document.getElementById('months').innerHTML =  ageinMonths;
+             document.getElementById('days').innerHTML = ageinDays;
+             document.getElementById('hours').innerHTML = ageinHours
+             document.getElementById('minutes').innerHTML = ageinMinutes;
+             document.getElementById('seconds').innerHTML = ageinSeconds;
+
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+<div class="container">
+    <h1>Word Counter</h1>
+    <textarea id="counter" cols="50" rows="10"></textarea>
+    <div class="heading">
+        <span id="word">0</span> words
+        <span id="char">0</span> character
+    </div>
+</div>
+
+<script type="text/javascript">
+
+let count = document.getElementById('counter');
+
+count.addEventListener('input',function(){
+
+var text = this.value;
+var char = text.length;
+document.getElementById('char').innerHTML = char;
+var words = text.split(" ");
+let cleanlist = words.filter(function(elm){
+return elm != "";
+
+});
+document.getElementById('word').innerHTML = words.length;
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>javascript</title>
+      <link rel="stylesheet" type="text/css" href="style.css">
+   </head>
+   <body>
+      <h1 class="header">Hello World</h1>
+      <div class="bulb">
+         <button class="btn" onclick="document.getElementById('myimage').src='images/pic_bulbon.gif'">turn on light</button>
+         <img src="image/pic_bulboff.gif" id="myimage">
+         
+         <button class="btn" onclick="document.getElementById('myimage').src='images/pic_bulboff.gif'">turn off light</button>
+      </div>
+      <div class="formhead">
+         <h1>Form Validation</h1>
+      </div>
+      
+      <form id="form" action="#" onsubmit="return false validation()" name="myform">
+         <div class="set">
+            <label>Name:</label>
+            <input type="text"  id="Fname" placeholder="Name" name="first" class="padd"><br>
+            <span id="small" style="color: red; font-weight: bold; margin: -18px 10px 10px 4px;"></span>
+         </div>
+         <div class="set">
+            <label>
+               Password:
+            </label>
+            <input type="text"  id="password" placeholder="password" name="pass" class="padd"><br>
+            <span id="passinfo" style="color: red; font-weight: bold; margin: -18px 10px 10px 4px;"></span>
+         </div>
+         <div class="set">
+            <label>
+               Confirm Password:
+            </label>
+            <input type="text"  id="confirmpass" placeholder="confirm password" name="confirmpassword" class="padd">
+            <span id="conpass" style="color: red; font-weight: bold; margin: -18px 10px 10px 4px;"></span>
+         </div>
+         <br>
+         <div class="set">
+            <label>
+               Phone:
+            </label>
+            <input type="text"  id="phone.no" placeholder="Phone" name="phone" class="padd"><br>
+            <span id="phone" style="color: red; font-weight: bold; margin: -18px 10px 10px 4px;"></span>
+         </div>
+         
+         <div class="set">
+            <label>
+               Email:
+            </label>
+            <input type="text"  id="emailerror" placeholder="Email" name="email" class="padd"><br>
+            <span id="email" style="color: red; font-weight: bold; margin: -18px 10px 10px 4px;"></span>
+         </div>
+         <button class="btn2">submit</button>
+      </form>
+      <script type="text/javascript">
+      function validation() {
+         
+      var user = document.getElementById("Fname").value;
+      var pass = document.getElementById("password").value;
+      var confpass = document.getElementById("confirmpass").value;
+      var phone = document.getElementById("phone.no").value;
+      var email = document.getElementById("emailerror").value;
+      
+      if (user == "") {
+      document.getElementById('small').innerHTML = "fill in the blank";
+      return false;
+      }
+      if ((user.length <= 2 ) || (user.length >= 15)) {
+      document.getElementById('small').innerHTML = "user name must be in 2 to 15 characters";
+      return false;
+      }
+      if (!isNaN(user)) {
+      document.getElementById('small').innerHTML = "only characters are allowed";
+      return false;
+      }
+      /* username input has been closed here*/
+      
+      if (pass == "") {
+      document.getElementById('passinfo').innerHTML = "enter the password";
+      return false;
+      }
+      if ((pass.length <= 5 ) || (pass.length >= 12)) {
+      document.getElementById('pass').innerHTML = "password should be greater than 5 or less than 12";
+      return false;
+      }
+      
+      if (confpass == "") {
+      document.getElementById('conpass').innerHTML = "Enter Confirm Password";
+      return false;
+      }
+      if (pass!=confpass ) {
+         document.getElementById('conpass').innerHTML = "password are not matching";
+      return false;
+      }
+      /* password input has been closed here*/
+      if (phone == "") {
+      document.getElementById('phone').innerHTML = "enter the phone number";
+      return false;
+      }
+      if (isNaN(phone)) {
+      document.getElementById('phone').innerHTML = "enter only digits";
+      return false;
+      }
+      
+      if (phone.length != 10 ) {
+      document.getElementById('phone').innerHTML = "10 digits must enter here";
+      return false;
+      }
+      /* phone.no input has been closed here*/
+      
+      if (email == "") {
+      document.getElementById('email').innerHTML = "enter your email";
+      return false;
+      }
+      if (email.indexOf('@') <= 0) {
+      document.getElementById('email').innerHTML = "@ is in invalid position";
+      return false;
+      
+      }
+      if ((email.CharAt(email.length-4)!= '.') && (email.CharAt(email.length-3)!= '.'))  {
+      document.getElementById('email').innerHTML = ". is in invalid position";
+      return false;
+      }
+      
+      }
+
+
+     let element = document.forms;
+
+     console.log(element);
+
+
+
+     let b = "Arslan";
+     let a = "Khalid";
+     document.write(`<h1>${b}  ${a}</h1>`);
+
+
+     class employe{
+
+       myfunc(){
+         document.write("this is my opp practice");
+       }
+       thanks(){
+         document.write("my oop is working hopefully");
+       }
+       
+     }
+
+     let ob = new employe;
+     ob.myfunc();
+     ob.thanks(); 
+
+   
+
+
+      
+      </script>
+   </body>
+</html>
